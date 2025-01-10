@@ -9,3 +9,7 @@
 - 前月の工数を修正すると今月の表示に戻ってしまうため、前月の連続編集ができない問題を解消します
 - 入力した工数と日付の対応がわからないので、対応させたリストを取得する機能追加
   - ※JOBCAN のサーバーに月の日数分回だけリクエスト投げる必要が有り、攻撃と思われないために 1 リクエストごとに 1 秒の間隔をあけています
+
+# Lisence
+
+This project is licensed under the MIT License, see the LICENSE.txt file for details
