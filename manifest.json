@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Sort Reverse for JobCan",
+  "version": "1.1.2",
+  "description": "jobcanは順番が逆なのが残念だったので",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ssl.jobcan.jp/employee/man-hour-manage",
+        "https://ssl.jobcan.jp/employee/man-hour-template/list"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "js": ["src/pc/man-hour-manage/jobCanSort-script.js"]
+    },
+    {
+      "matches": ["https://ssl.jobcan.jp/employee/man-hour-manage"],
+      "run_at": "document_end",
+      "all_frames": true,
+      "js": [
+        "src/pc/man-hour-manage/jobCanManHourManage-script.js",
+        "src/pc/man-hour-manage/get_details.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://ssl.jobcan.jp/employee/holiday/new",
+        "https://ssl.jobcan.jp/employee/over-work/new",
+        "https://ssl.jobcan.jp/employee/early-over-work/new",
+        "https://ssl.jobcan.jp/employee/night-work/new",
+        "https://ssl.jobcan.jp/employee/holidayworking/new"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "js": ["src/pc/newApplication/writeDateOnResason.js"]
+    }
+  ]
+}
